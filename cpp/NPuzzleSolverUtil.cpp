@@ -16,6 +16,7 @@
  */
 
 #include <cpp/NPuzzleSolverUtil.h>
+#include <cpp/Node.h>
 
 #include <vector>
 #include <queue>

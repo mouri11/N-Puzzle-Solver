@@ -15,22 +15,5 @@
  * along with this program; if not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef CPP_NPUZZLESOLVERUTIL_H_
-#define CPP_NPUZZLESOLVERUTIL_H_
-
-#include <vector>
+#include <cpp/Node.h>
 #include <iostream>
-
-class NPuzzleSolver {
- public:
-         NPuzzleSolver(const std::vector < std::vector<int> > &initial_state,
-                         const std::vector< std::vector<int> > &final_state);
-         void find_solution();
- private:
-         std::vector< std::vector <int> > initial_state, final_state;
-         int get_distance(
-                         const std::vector< std::vector<int> >&initial_state,
-                         const std::vector< std::vector<int> >&final_state);
-};
-
-#endif  // CPP_NPUZZLESOLVERUTIL_H_

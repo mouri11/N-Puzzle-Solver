@@ -15,22 +15,32 @@
  * along with this program; if not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef CPP_NPUZZLESOLVERUTIL_H_
-#define CPP_NPUZZLESOLVERUTIL_H_
+#ifndef CPP_NODE_H_
+#define CPP_NODE_H_
 
 #include <vector>
 #include <iostream>
 
-class NPuzzleSolver {
- public:
-         NPuzzleSolver(const std::vector < std::vector<int> > &initial_state,
-                         const std::vector< std::vector<int> > &final_state);
-         void find_solution();
- private:
-         std::vector< std::vector <int> > initial_state, final_state;
-         int get_distance(
-                         const std::vector< std::vector<int> >&initial_state,
-                         const std::vector< std::vector<int> >&final_state);
-};
+class Node {
+    Node* parent;
+    std::vector< std::vector<int> > state;
+    int manhattan_distance;
 
-#endif  // CPP_NPUZZLESOLVERUTIL_H_
+    /*Position of blank spot*/
+    int x, y;
+
+ public:
+    Node() {}
+    Node(Node* parent,
+         const std::vector< std::vector<int> >& state,
+         int manhattan_distance) {
+        this->parent = parent;
+        this->state = state;
+        this->manhattan_distance = manhattan_distance;
+    }
+    int get_manhattan_distance();
+    Node* get_parent();
+    void print_node();
+}
+
+#endif  // CPP_NODE_H_

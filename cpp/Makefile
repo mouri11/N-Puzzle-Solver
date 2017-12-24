@@ -4,7 +4,7 @@ CFLAGS = -I ..
 main.o: main.cpp NPuzzleSolverUtil.h
 	$(CXX) $(CFLAGS) main.cpp NPuzzleSolverUtil.cpp
 
-NPuzzleSolverUtil.o: NPuzzleSolverUtil.h NPuzzleSolverUtil.cpp
+NPuzzleSolverUtil.o: NPuzzleSolverUtil.h Node.h NPuzzleSolverUtil.cpp
 	$(CXX) $(CFLAGS) NPuzzleSolverUtil.cpp
 
 NPuzzleSolver: main.o NPuzzleSolverUtil.o
